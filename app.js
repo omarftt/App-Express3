@@ -2,14 +2,9 @@ const express = require('express')
 const app = express()
 
 app.get('/makers/:nombre',(req,res) => {
-    if (!req.params.nombre || req.params.nombre.length === 0) {
-        res.send("<h1>Hola desconocido!</h1>");
-    }
-    else {
-        const nameS = req.params.nombre;
-        const nameS2 = nameS.charAt(0).toUpperCase() + nameS.slice(1);
-        res.send("<h1>Hola " +nameS2 + "!</h1>");
-    }
+    const nameS = req.params.nombre;
+    const nameS2 = nameS.charAt(0).toUpperCase() + nameS.slice(1);
+    res.send("<h1>Hola " +nameS2 + "!</h1>");
     
 });
 
